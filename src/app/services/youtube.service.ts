@@ -17,7 +17,7 @@ export class YoutubeService {
 
 	getVideos(): Observable<IVideo[]> {
 		const url = `${this.youtubeUrl}/playlistItems`;
-		let params = new HttpParams().set('part', 'snippet').set('maxResults', '5').set('playlistId', this.playList).set('key', this.apiKey);
+		let params = new HttpParams().set('part', 'snippet').set('maxResults', '10').set('playlistId', this.playList).set('key', this.apiKey);
 
 		return this._http.get<IResponseYoutube>(url, { params }).pipe(
 			map((resp: IResponseYoutube) => {
